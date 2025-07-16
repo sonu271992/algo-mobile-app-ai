@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Settings, Activity, CheckCircle, XCircle, Clock, BarChart3 } from 'lucide-react';
 import { User, Settings as SettingsType, Order } from '../types';
 import { apiService } from '../services/api';
-import TradingViewWidget from './TradingViewWidget';
+import NiftyChart from './NiftyChart';
 
 interface HomeTabProps {
   user: User;
@@ -82,14 +82,12 @@ const HomeTab: React.FC<HomeTabProps> = ({ user }) => {
       </div>
 
       {/* TradingView Chart */}
-      <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+      <div className="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
         <div className="flex items-center space-x-3 mb-4">
           <BarChart3 className="w-6 h-6 text-slate-600" />
           <h3 className="text-lg font-semibold text-slate-800">Nifty 50 Chart</h3>
         </div>
-        <div className="h-96 rounded-lg overflow-hidden border border-slate-200">
-          <TradingViewWidget />
-        </div>
+        <NiftyChart />
       </div>
 
       {/* Settings */}
